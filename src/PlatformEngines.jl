@@ -370,7 +370,7 @@ function probe_platform_engines!(;verbose::Bool = false)
             return (url, path, hdrs...) -> begin
                 webclient_code = """
                 [System.Net.ServicePointManager]::SecurityProtocol =
-                    [System.Net.SecurityProtocolType]::SystemDefault;
+                    [System.Net.SecurityProtocolType]::Tls;
                 \$webclient = (New-Object System.Net.Webclient);
                 \$webclient.UseDefaultCredentials = \$true;
                 \$webclient.Proxy.Credentials = \$webclient.Credentials;
