@@ -868,7 +868,7 @@ function pkg_server_registry_url(uuid::UUID)
     tmp_path = tempname()
     download_ok = false
     try
-        download("$server/registries", tmp_path, verbose=false)
+        download("$server/registries", tmp_path, verbose=true)
         download_ok = true
     catch err
         @warn "could not download $server/registries"
